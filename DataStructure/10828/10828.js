@@ -1,7 +1,7 @@
 // 걸린 시간 00:30:00
 //스택
 const fs = require('fs');
-const line = require('fs').readFileSync('DataStructure/10828/input.txt','utf8')
+const line = require('fs').readFileSync('10828/input.txt','utf8')
 const input = line.trim().split('\n');// 줄바꿈 기준으로 분리해 1줄씩 분리해서 담기
 const testCaseNum  = +input[0]; // 테스트케이스 개수
 let result = []; // 작업할 스택 공간
@@ -13,13 +13,13 @@ for(let i = 1 ;i<=testCaseNum;i++){ // 테스트 케이스 진행
     arr[1] = +arr[1]; // value String -> Number로 변환
     }
 
-    output.push(solution(arr,testCaseNum));
+    output.push(solution(arr));
     if(arr[0] === "push"){// push 결과 제거
         output.pop();
     }
 }
 
-function solution(arr, testCaseNum){ //문제 요구 사항 참조 구현
+function solution(arr){ //문제 요구 사항 참조 구현
     let Do = arr[0]
     if( Do ==='push'){
         return result.push(arr[1]);
